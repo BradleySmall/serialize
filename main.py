@@ -13,7 +13,7 @@ class Node:
 def serialize(node):
     """recursively parse tree creating a string"""
     if node:
-        return "%s,%s,%s" % (node.val,
+        return "%s%s%s" % (node.val,
                                serialize(node.left),
                                serialize(node.right))
     return 'None'
@@ -21,7 +21,7 @@ def serialize(node):
 
 def deserialize(string):
     """recursive deserialization using nested function"""
-    the_list = string.split(',')
+    the_list = string.split('')
     list_len = len(the_list)
     idx = 0
 
